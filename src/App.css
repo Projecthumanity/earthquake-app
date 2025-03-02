@@ -14,6 +14,7 @@ h1 {
   margin: 0 auto;
   max-width: 1200px;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -24,5 +25,91 @@ li {
   margin: 5px 0;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid #e0cece;
+}
+
+.error-message {
+  color: red;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid red;
+  border-radius: 4px;
+}
+
+.recharts-wrapper {
+  margin: 0 auto;
+}
+
+.recharts-surface {
+  overflow: visible;
+}
+
+body {
+  transition: background-color 0.3s ease;
+}
+
+.MuiCard-root {
+  transition: all 0.3s ease;
+}
+
+.MuiCard-root:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.earthquake-item {
+  transition: background-color 0.3s ease;
+}
+
+.earthquake-item:hover {
+  background-color: rgba(25, 118, 210, 0.04);
+}
+.logo-spin {
+  animation: logo-spin infinite 20s linear;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app-logo {
+  transition: transform 0.3s ease;
+}
+
+.app-logo:hover {
+  transform: scale(1.1);
+}
+
+/* Location Permission Styles */
+.location-permission-prompt {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.location-error {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  background: #fff3cd;
+  color: #856404;
 }

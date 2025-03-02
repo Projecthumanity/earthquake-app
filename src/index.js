@@ -1,17 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './index.css';
+import { verifyAssets } from './utils/assetVerification';
+
+// Create default theme
+const defaultTheme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#dc004e',
+    },
+  },
+});
+
+if (process.env.NODE_ENV === 'development') {
+  verifyAssets();
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <ThemeProvider theme={defaultTheme}>
+        <CssBaseline />
+        <App />
+      </ThemeProvider>
+    </Router>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
