@@ -7,27 +7,14 @@
       "use": "@vercel/static-build",
       "config": { 
         "distDir": "build",
-        "installCommand": "npm install --legacy-peer-deps",
-        "buildCommand": "CI=false npm run build"
+        "installCommand": "npm install --force",
+        "buildCommand": "npm run build"
       }
     }
   ],
   "routes": [
     {
       "handle": "filesystem"
-    },
-    {
-      "src": "/static/(.*)",
-      "headers": { "cache-control": "public, max-age=31536000, immutable" },
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/manifest.json",
-      "dest": "/manifest.json"
-    },
-    {
-      "src": "/favicon.ico",
-      "dest": "/favicon.ico"
     },
     {
       "src": "/(.*)",
