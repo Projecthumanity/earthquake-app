@@ -24,10 +24,10 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "build": "react-app-rewired build && cp _redirects build/_redirects",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "generate-icons": "node scripts/generate-icons.js"
+    "vercel-build": "npm run build"
   },
   "eslintConfig": {
     "extends": [

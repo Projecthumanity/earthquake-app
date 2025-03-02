@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "framework": "create-react-app",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { 
+        "distDir": "build",
+        "installCommand": "npm install",
+        "buildCommand": "npm run build"
+      }
+    }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/static/(.*)", "dest": "/static/$1" },
+    { "src": "/manifest.json", "dest": "/manifest.json" },
+    { "src": "/icons/(.*)", "dest": "/icons/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
